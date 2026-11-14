@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flag Icons for NSGo</title>
+  <meta name="description" content="271 country flags from flag-icons for NSGo's native apps, in 4:3 and 1:1." />
+  <link rel="alternate" hreflang="zh-CN" href="zh/" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="name" href="./">NSGo Flag Icons</a>
+      <a href="https://github.com/nsgo-dev/nsgo">NSGo</a>
+      <a href="https://github.com/nsgo-dev/nsgo-icons-flags">GitHub</a>
+      <a href="zh/" hreflang="zh-CN" lang="zh-CN">中文</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <h1><span>Flag Icons</span> for NSGo</h1>
+      <p>271 country flags from flag-icons, in 4:3 and 1:1, drawn natively from SVG on every platform NSGo runs on.</p>
+      <div class="actions">
+        <a class="button primary" href="#start">Get started</a>
+        <a class="button" href="https://github.com/nsgo-dev/nsgo-icons-flags">GitHub</a>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <img class="shot" src="assets/gallery.png" width="1600" height="1105"
+        alt="The gallery: a grid of flags, and the chosen one with the code that draws it" />
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>Every flag, natively</h2>
+        <p>The flags are flag-icons' own SVG, checked at build time against what NSGo's SVG reader draws.</p>
+        <div class="features">
+          <div><h3>Two ratios</h3><p>Every flag in 4:3 and 1:1, from countries to subdivisions such as Scotland and organizations such as the EU.</p></div>
+          <div><h3>Only what you use</h3><p>An accessor per flag and no registry: an app links only the flags it calls.</p></div>
+          <div><h3>Find by code</h3><p>The catalog finds a flag by a code known at run time, such as a locale's region, with its English name.</p></div>
+          <div><h3>Pinned upstream</h3><p>Generated from one flag-icons commit, and checked against it in CI.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="start">
+      <div class="wrap">
+        <h2>Get started</h2>
+        <p>Add the library to an NSGo app with Go 1.26 or later.</p>
+        <div class="code">
+          <pre>go get github.com/nsgo-dev/nsgo-icons-flags</pre>
+          <button type="button" data-copied="Copied">Copy</button>
+        </div>
+        <div class="code">
+          <pre>import flags "github.com/nsgo-dev/nsgo-icons-flags"
+
+core.Icon{
+	SVG:   flags.JP(),
+	Style: core.Style{FontSize: 24},
+	Label: "Japan",
+}</pre>
+          <button type="button" data-copied="Copied">Copy</button>
+        </div>
+        <p>JP is the 4:3 flag and JPSquare the 1:1 one. When the code is known only at run time, use the catalog:</p>
+        <div class="code">
+          <pre>import "github.com/nsgo-dev/nsgo-icons-flags/catalog"
+
+if f, ok := catalog.Find("GB"); ok {
+	core.Icon{SVG: f.SVG(), Style: core.Style{FontSize: 24}, Label: f.Name}
+}</pre>
+          <button type="button" data-copied="Copied">Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Find a flag</h2>
+        <p>The gallery searches every flag by name, code or capital and shows the code that draws the one you choose, ready to copy. Run it from a checkout:</p>
+        <div class="code">
+          <pre>git clone https://github.com/nsgo-dev/nsgo-icons-flags
+cd nsgo-icons-flags
+go tool nsgo dev examples/gallery</pre>
+          <button type="button" data-copied="Copied">Copy</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>The code is licensed under the MIT License.</p>
+      <p>The flags are from <a href="https://github.com/lipis/flag-icons">flag-icons</a>, © 2013 Panayiotis Lipiridis, under the MIT License.</p>
+    </div>
+  </footer>
+  <script src="copy.js"></script>
+</body>
+</html>

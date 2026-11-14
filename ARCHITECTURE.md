@@ -13,6 +13,7 @@ The repository is one Go module. Package `flags` at its root draws the [flag-ico
 | `upstream.json`, `LICENSE-FLAGS` | Generated: the upstream commit and a digest of its inputs, and upstream's license |
 | `tools/flaggen` | The generator |
 | `examples/gallery` | The flag finder: search, a virtualized grid, and the chosen flag's code |
+| `website/` | The static site GitHub Pages serves, with no build step; `.github/workflows/website.yml` deploys it when it changes on `main` |
 
 ## Boundaries
 
@@ -33,4 +34,4 @@ NSGo ignores `stroke-miterlimit`, which some flags set, so a few sharp joins may
 ## Verification
 
 - `go test ./...` parses and draws every flag in both ratios, checks that the marked flags keep their fifty stars, and tests the generator, the catalog and the gallery headless.
-- `go tool nsgo test -target macos examples/gallery` screenshots the gallery. `assets/gallery.png` is its `gallery-search.png`, 1600 pixels wide.
+- `go tool nsgo test -target macos examples/gallery` screenshots the gallery. `website/assets/gallery.png` is its `gallery.png`, 1600 pixels wide.

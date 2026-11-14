@@ -10,7 +10,7 @@ NSGo Flag Icons is flag-icons for NSGo as a library of its own. Read [ARCHITECTU
 
 ## Verification
 
-Run the checks in [Verification](ARCHITECTURE.md#verification) from the repository root. After an upstream update or a change to the gallery's look, look at the macOS screenshots, and refresh `assets/gallery.png` when the gallery changed.
+Run the checks in [Verification](ARCHITECTURE.md#verification) from the repository root. After an upstream update or a change to the gallery's look, look at the macOS screenshots, and refresh `website/assets/gallery.png` when the gallery changed.
 
 ## Documentation
 
