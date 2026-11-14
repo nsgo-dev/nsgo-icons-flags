@@ -51,26 +51,26 @@
         <h2>开始使用</h2>
         <p>在使用 Go 1.26 或更高版本的 NSGo 应用里加入本库。</p>
         <div class="code">
-          <pre>go get github.com/nsgo-dev/nsgo-icons-flags</pre>
+          <pre class="bash"><span class="nb">go</span><span class="w"> </span>get<span class="w"> </span>github.com/nsgo-dev/nsgo-icons-flags</pre>
           <button type="button" data-copied="已复制">复制</button>
         </div>
         <div class="code">
-          <pre>import flags "github.com/nsgo-dev/nsgo-icons-flags"
+          <pre class="go"><span class="kn">import</span><span class="w"> </span><span class="nx">flags</span><span class="w"> </span><span class="s">&quot;github.com/nsgo-dev/nsgo-icons-flags&quot;</span>
 
-core.Icon{
-	SVG:   flags.JP(),
-	Style: core.Style{FontSize: 24},
-	Label: "Japan",
-}</pre>
+<span class="nx">core</span><span class="p">.</span><span class="nx">Icon</span><span class="p">{</span>
+<span class="w">	</span><span class="nx">SVG</span><span class="p">:</span><span class="w">   </span><span class="nx">flags</span><span class="p">.</span><span class="nf">JP</span><span class="p">(),</span>
+<span class="w">	</span><span class="nx">Style</span><span class="p">:</span><span class="w"> </span><span class="nx">core</span><span class="p">.</span><span class="nx">Style</span><span class="p">{</span><span class="nx">FontSize</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">},</span>
+<span class="w">	</span><span class="nx">Label</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Japan&quot;</span><span class="p">,</span>
+<span class="p">}</span></pre>
           <button type="button" data-copied="已复制">复制</button>
         </div>
         <p>JP 是 4:3 的国旗，JPSquare 是 1:1 的。代码要到运行时才知道时，用 catalog：</p>
         <div class="code">
-          <pre>import "github.com/nsgo-dev/nsgo-icons-flags/catalog"
+          <pre class="go"><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/nsgo-dev/nsgo-icons-flags/catalog&quot;</span>
 
-if f, ok := catalog.Find("GB"); ok {
-	core.Icon{SVG: f.SVG(), Style: core.Style{FontSize: 24}, Label: f.Name}
-}</pre>
+<span class="k">if</span><span class="w"> </span><span class="nx">f</span><span class="p">,</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">catalog</span><span class="p">.</span><span class="nf">Find</span><span class="p">(</span><span class="s">&quot;GB&quot;</span><span class="p">);</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nx">core</span><span class="p">.</span><span class="nx">Icon</span><span class="p">{</span><span class="nx">SVG</span><span class="p">:</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nf">SVG</span><span class="p">(),</span><span class="w"> </span><span class="nx">Style</span><span class="p">:</span><span class="w"> </span><span class="nx">core</span><span class="p">.</span><span class="nx">Style</span><span class="p">{</span><span class="nx">FontSize</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">},</span><span class="w"> </span><span class="nx">Label</span><span class="p">:</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">Name</span><span class="p">}</span>
+<span class="p">}</span></pre>
           <button type="button" data-copied="已复制">复制</button>
         </div>
       </div>
@@ -81,9 +81,9 @@ if f, ok := catalog.Find("GB"); ok {
         <h2>查找国旗</h2>
         <p>Gallery 按名称、代码或首都搜索所有国旗，并给出绘制选中国旗的代码，可以直接复制。在检出的仓库里运行：</p>
         <div class="code">
-          <pre>git clone https://github.com/nsgo-dev/nsgo-icons-flags
-cd nsgo-icons-flags
-go tool nsgo dev examples/gallery</pre>
+          <pre class="bash"><span class="nb">git</span><span class="w"> </span>clone<span class="w"> </span>https://github.com/nsgo-dev/nsgo-icons-flags
+<span class="nb">cd</span><span class="w"> </span>nsgo-icons-flags
+<span class="nb">go</span><span class="w"> </span>tool<span class="w"> </span>nsgo<span class="w"> </span>dev<span class="w"> </span>examples/gallery</pre>
           <button type="button" data-copied="已复制">复制</button>
         </div>
       </div>
