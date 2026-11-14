@@ -1,0 +1,9 @@
+name: Flags
+id: dev.nsgo.icons-flags.gallery
+version: 0.1.0
+
+dev:
+  target: native
+
+build:
+  output: dist
