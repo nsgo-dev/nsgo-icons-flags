@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NSGo 国旗图标</title>
+  <meta name="description" content="把 flag-icons 的 271 面国旗带到 NSGo 原生应用，有 4:3 和 1:1 两种比例。" />
+  <link rel="alternate" hreflang="en" href="../" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="name" href="./">NSGo Flag Icons</a>
+      <a href="https://github.com/nsgo-dev/nsgo">NSGo</a>
+      <a href="https://github.com/nsgo-dev/nsgo-icons-flags">GitHub</a>
+      <a href="../" hreflang="en" lang="en">English</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <h1>NSGo 的<span>国旗图标</span></h1>
+      <p>flag-icons 的 271 面国旗，4:3 和 1:1 两种比例，在 NSGo 支持的每个平台上都由 SVG 原生绘制。</p>
+      <div class="actions">
+        <a class="button primary" href="#start">开始使用</a>
+        <a class="button" href="https://github.com/nsgo-dev/nsgo-icons-flags">GitHub</a>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <img class="shot" src="../assets/gallery.png" width="1600" height="1105"
+        alt="Gallery：国旗网格，以及选中国旗和绘制它的代码" />
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>每面国旗，原生绘制</h2>
+        <p>国旗就是 flag-icons 原本的 SVG，构建时逐个检查 NSGo 的 SVG 解析器能否完整绘制。</p>
+        <div class="features">
+          <div><h3>两种比例</h3><p>每面国旗都有 4:3 和 1:1，涵盖国家和地区、苏格兰这样的次级行政区，以及欧盟这样的组织。</p></div>
+          <div><h3>只带用到的</h3><p>每面国旗一个访问函数，没有注册表：应用只链接实际调用的国旗。</p></div>
+          <div><h3>按代码查找</h3><p>catalog 按运行时才知道的代码查找国旗，比如语言区域里的地区，并给出英文名。</p></div>
+          <div><h3>锁定上游</h3><p>从 flag-icons 的一个固定提交生成，CI 每次都对照它检查。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="start">
+      <div class="wrap">
+        <h2>开始使用</h2>
+        <p>在使用 Go 1.26 或更高版本的 NSGo 应用里加入本库。</p>
+        <div class="code">
+          <pre>go get github.com/nsgo-dev/nsgo-icons-flags</pre>
+          <button type="button" data-copied="已复制">复制</button>
+        </div>
+        <div class="code">
+          <pre>import flags "github.com/nsgo-dev/nsgo-icons-flags"
+
+core.Icon{
+	SVG:   flags.JP(),
+	Style: core.Style{FontSize: 24},
+	Label: "Japan",
+}</pre>
+          <button type="button" data-copied="已复制">复制</button>
+        </div>
+        <p>JP 是 4:3 的国旗，JPSquare 是 1:1 的。代码要到运行时才知道时，用 catalog：</p>
+        <div class="code">
+          <pre>import "github.com/nsgo-dev/nsgo-icons-flags/catalog"
+
+if f, ok := catalog.Find("GB"); ok {
+	core.Icon{SVG: f.SVG(), Style: core.Style{FontSize: 24}, Label: f.Name}
+}</pre>
+          <button type="button" data-copied="已复制">复制</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>查找国旗</h2>
+        <p>Gallery 按名称、代码或首都搜索所有国旗，并给出绘制选中国旗的代码，可以直接复制。在检出的仓库里运行：</p>
+        <div class="code">
+          <pre>git clone https://github.com/nsgo-dev/nsgo-icons-flags
+cd nsgo-icons-flags
+go tool nsgo dev examples/gallery</pre>
+          <button type="button" data-copied="已复制">复制</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>代码采用 MIT 许可证。</p>
+      <p>国旗来自 <a href="https://github.com/lipis/flag-icons">flag-icons</a>，© 2013 Panayiotis Lipiridis，采用 MIT 许可证。</p>
+    </div>
+  </footer>
+  <script src="../copy.js"></script>
+</body>
+</html>

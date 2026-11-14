@@ -2,7 +2,8 @@
 
 <p align="center">
   <strong>English</strong> |
-  <a href="README.zh-CN.md">简体中文</a>
+  <a href="README.zh-CN.md">简体中文</a> |
+  <a href="https://nsgo-dev.github.io/nsgo-icons-flags/">Website</a>
 </p>
 
 <p align="center">
@@ -10,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/gallery.png" alt="NSGo Flag Icons gallery">
+  <img src="website/assets/gallery.png" alt="NSGo Flag Icons gallery">
 </p>
 
 ## Install
