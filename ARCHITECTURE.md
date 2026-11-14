@@ -13,7 +13,8 @@ The repository is one Go module. Package `flags` at its root draws the [flag-ico
 | `upstream.json`, `LICENSE-FLAGS` | Generated: the upstream commit and a digest of its inputs, and upstream's license |
 | `tools/flaggen` | The generator |
 | `examples/gallery` | The flag finder: search, a virtualized grid, and the chosen flag's code |
-| `website/` | The static site GitHub Pages serves, with no build step; `.github/workflows/website.yml` deploys it when it changes on `main` |
+| `website/` | The static site GitHub Pages serves, with no build step; `.github/workflows/website.yml` deploys it when it changes on `main`. `favicon.svg` is the icon's source: `favicon.ico` (16, 32 and 48 pixels) and the full-bleed 180-pixel `apple-touch-icon.png` are rendered from it with `rsvg-convert` |
+| `tools/siteog` | `og.html`, the source of `website/assets/og.png`, the 1200 by 630 image link previews show; `render.sh` renders it after the page or the gallery screenshot changes |
 | `tools/sitehl` | Highlights the site's code blocks with Pygments when a page is written: write a changed block as a plain `<pre>`, then run `python3 tools/sitehl/highlight.py website/index.html website/zh/index.html` |
 
 ## Boundaries
