@@ -14,6 +14,7 @@ The repository is one Go module. Package `flags` at its root draws the [flag-ico
 | `tools/flaggen` | The generator |
 | `examples/gallery` | The flag finder: search, a virtualized grid, and the chosen flag's code |
 | `website/` | The static site GitHub Pages serves, with no build step; `.github/workflows/website.yml` deploys it when it changes on `main` |
+| `tools/sitehl` | Highlights the site's code blocks with Pygments when a page is written: write a changed block as a plain `<pre>`, then run `python3 tools/sitehl/highlight.py website/index.html website/zh/index.html` |
 
 ## Boundaries
 
