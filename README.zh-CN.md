@@ -17,10 +17,10 @@
 ## 安装
 
 ```sh
-go get github.com/nsgo-dev/nsgo-icons-flags
+go get github.com/nsgo-dev/nsgo-icons-flags@v0.1.0
 ```
 
-需要 Go 1.26。`go get` 会一并拉取本库所基于的 NSGo 提交。
+需要 Go 1.27.3 或更高版本，以及 NSGo v0.3.4 或更高版本。
 
 ## 用法
 

@@ -17,10 +17,10 @@
 ## Install
 
 ```sh
-go get github.com/nsgo-dev/nsgo-icons-flags
+go get github.com/nsgo-dev/nsgo-icons-flags@v0.1.0
 ```
 
-Requires Go 1.26. `go get` brings the NSGo commit this library is built against.
+Requires Go 1.27.3 or later and NSGo v0.3.4 or later.
 
 ## Usage
 
