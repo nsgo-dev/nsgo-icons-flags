@@ -4,7 +4,7 @@ NSGo Flag Icons is flag-icons for NSGo as a library of its own. Read [ARCHITECTU
 
 ## Principles
 
-- NSGo comes from the commit `go.mod` requires. When the flags need a change in NSGo, land it on NSGo's `main` first, following that repository's own instructions, then run `go get github.com/nsgo-dev/nsgo@<commit>`.
+- NSGo comes from the release `go.mod` requires; never require an untagged NSGo commit. When the flags need a change in NSGo, land it on NSGo's `main` first, following that repository's own instructions, then run `go get github.com/nsgo-dev/nsgo@<version>` once a release includes it.
 - Keep the [boundaries](ARCHITECTURE.md#boundaries): NSGo's public packages only, no runtime registry in package `flags`, generated files only from `tools/flaggen`.
 - Keep `LICENSE` for this repository's code and `LICENSE-FLAGS` for upstream's flags.
 
